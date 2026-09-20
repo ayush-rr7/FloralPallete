@@ -129,7 +129,7 @@ function CreateProduct() {
         } successfully`
       );
 
-      navigate("/dashboard");
+      navigate("/admin");
     } catch (err) {
       console.log(err);
       alert("Something went wrong");
