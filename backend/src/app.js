@@ -43,8 +43,8 @@ app.use(cookieParser());  //for parsing jwt
 
 
 app.use('/auth',authRouter);
+app.use('/api', productRouter);
 //protected route
-app.use('/api',authenticateJWT, productRouter);
 app.use('/favourite',authenticateJWT, favouriteRouter);
 
 app.use("/admin",authenticateJWT, dashboardRouter);

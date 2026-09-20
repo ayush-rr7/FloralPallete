@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-
+import { useNavigate } from "react-router-dom";
 import {
   getProducts,
   deleteProduct,
@@ -32,6 +32,8 @@ const [cartLoading, setCartLoading] = useState(null);
 
   // Prevent same page from being requested multiple times
   const [loadingMore, setLoadingMore] = useState(false);
+
+   const navigate = useNavigate();
 
   // =========================================================
   // FETCH FAVOURITES
@@ -136,6 +138,10 @@ const [cartLoading, setCartLoading] = useState(null);
       }
     } catch (err) {
       console.log("Favourite error:", err);
+       if (err.response?.status === 401) {
+        navigate("/login");
+        return;
+      }
     }
   };
 
@@ -156,7 +162,11 @@ const [cartLoading, setCartLoading] = useState(null);
     alert("Added to cart successfully");
   } catch (err) {
     console.log("Cart error:", err);
-
+     
+    if (err.response?.status === 401) {
+    navigate("/login");
+    return;
+  }
     alert(
       err.response?.data?.message ||
         "Unable to add product to cart"

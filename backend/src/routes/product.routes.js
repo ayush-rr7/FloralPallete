@@ -1,14 +1,15 @@
 import express from "express";
 import productController from "../controller/productController.js";
 import upload from "../config/cloudinary.js";
-
+import authenticateJWT from "../middleware/jwt.js";
+import ownerMiddleware from "../middleware/ownerMiddleware.js";
 const productRouter = express.Router();
 
-console.log("Product router coming");
+// console.log("Product router coming");
 
 // CREATE PRODUCT / SERVICE
 productRouter.post(
-  "/createProduct",
+  "/createProduct",authenticateJWT,ownerMiddleware,
   upload.array("imageURL", 5),
   productController.addProduct
 );
@@ -29,17 +30,17 @@ productRouter.get(
 
 // UPDATE PRODUCT / SERVICE
 productRouter.put(
-  "/editProduct/:id",
+  "/editProduct/:id",authenticateJWT,ownerMiddleware,
   upload.array("imageURL", 5),
   productController.updateProduct
 );
 
 // DELETE PRODUCT / SERVICE
 productRouter.delete(
-  "/deleteproduct/:id",
+  "/deleteproduct/:id",authenticateJWT,ownerMiddleware,
   productController.deleteProduct
 );
-productRouter.patch( "/ProductAvailability/:id", productController.updateAvailability );
+productRouter.patch( "/ProductAvailability/:id", authenticateJWT,ownerMiddleware,productController.updateAvailability );
 
 export default productRouter;
 

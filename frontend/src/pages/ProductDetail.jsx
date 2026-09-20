@@ -98,6 +98,10 @@ function ProductDetail() {
       }
     } catch (err) {
       console.log("Favourite error:", err);
+       if (err.response?.status === 401) {
+        navigate("/login");
+        return;
+      }
     } finally {
       setFavouriteLoading(false);
     }
@@ -130,7 +134,7 @@ function ProductDetail() {
 
   try {
     setCartLoading(true);
-
+    
     await addToCart(
       product._id,
       quantity
@@ -140,7 +144,10 @@ function ProductDetail() {
 
   } catch (err) {
     console.log("Cart error:", err);
-
+ if (err.response?.status === 401) {
+    navigate("/login");
+    return;
+  }
     alert(
       err.response?.data?.message ||
         "Unable to add product to cart"
