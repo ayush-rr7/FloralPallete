@@ -71,10 +71,10 @@ export default function Navbar() {
     if (user.role === "owner") {
       return [
         { label: "Dashboard", path: "/admin" },
-        {
-          label: "Add Product",
-          path: "/admin/products/create",
-        },
+        // {
+        //   label: "Add Product",
+        //   path: "/admin/products/create",
+        // },
         {
           label: "Products",
           path: "/admin/products",
@@ -192,41 +192,41 @@ export default function Navbar() {
 
             {/* OWNER DROPDOWN */}
 
-            {isOwner ? (
-              <>
-                <button
-                  onClick={() => {
-                    navigate("/admin/account");
-                    setAccountOpen(false);
-                  }}
-                  className="
-                    w-full text-left
-                    px-4 py-3
-                    text-gray-700
-                    hover:bg-gray-50
-                    transition
-                  "
-                >
-                  My Account
-                </button>
+                  {isOwner ? (
+          <>
+            <button
+              onClick={() => {
+                navigate("/admin/account");
+                setAccountOpen(false);
+              }}
+              className="
+                w-full text-left
+                px-4 py-3
+                text-gray-700
+                hover:bg-gray-50
+                transition
+              "
+            >
+              My Account
+            </button>
 
-                {/* <button
-                  onClick={() => {
-                    navigate("/admin/orders");
-                    setAccountOpen(false);
-                  }}
-                  className="
-                    w-full text-left
-                    px-4 py-3
-                    text-gray-700
-                    hover:bg-gray-50
-                    transition
-                  "
-                >
-                  Orders
-                </button> */}
-              </>
-            ) : (
+            <button
+              onClick={() => {
+                navigate("/admin/products/create");
+                setAccountOpen(false);
+              }}
+              className="
+                w-full text-left
+                px-4 py-3
+                text-gray-700
+                hover:bg-gray-50
+                transition
+              "
+            >
+              Add Product
+            </button>
+          </>
+) : (
               /* CUSTOMER DROPDOWN */
               <>
                 <button
