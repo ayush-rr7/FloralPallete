@@ -56,7 +56,7 @@ function Login() {
           </div>
 
           <h1 className="text-3xl font-bold text-gray-800">
-            Anil <span className="text-pink-600">Shop</span>
+            Anil <span className="text-pink-600">Flower Shop</span>
           </h1>
 
           <p className="text-sm text-gray-500 mt-2">
