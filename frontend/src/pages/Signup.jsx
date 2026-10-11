@@ -220,7 +220,7 @@ function Register() {
 
         {/* Title */}
         <h1 className="text-2xl font-semibold text-center text-gray-800 mb-2">
-          Bloom & Blossom
+          Anil flower
         </h1>
 
         <p className="text-center text-sm text-gray-500 mb-6">

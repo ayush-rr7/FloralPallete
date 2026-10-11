@@ -9,16 +9,16 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
-import hero from "../assets/hero.png";
-import roseImg from "../assets/roseImg.png";
-import celebImg from "../assets/celebImg.png";
-import weddingImg from "../assets/weddingImg.png";
-import roseBouquetImg from "../assets/roseBouquetImg.png";
-import Birthday from "../assets/Birthday.png";
-import jaimala from "../assets/jaimala.png";
-import car from "../assets/car.jpeg";
-import homedecor from "../assets/homedecor.jpg";
-import bottom  from "../assets/bottom.jpg";
+import hero from "../assets/hero.webp";
+import roseImg from "../assets/roseImg.webp";
+import celebImg from "../assets/celebImg.webp";
+import weddingImg from "../assets/weddingImg.webp";
+import roseBouquetImg from "../assets/roseBouquetImg.webp";
+import Birthday from "../assets/Birthday.webp";
+import jaimala from "../assets/jaimala.webp";
+import car from "../assets/car.webp";
+import homedecor from "../assets/homedecor.webp";
+import bottom  from "../assets/bottom.webp";
 
 
 
@@ -194,25 +194,26 @@ function Home() {
   {/* SOFT AMBIENT COLOR */}
   <div className="pointer-events-none absolute -left-32 top-0 -z-10 h-80 w-80 rounded-full bg-[#f4cbd7]/25 blur-3xl" />
 
-  {/* CONTENT CONTAINER */}
-  <div
-    className="relative mx-auto flex min-h-[600px] max-w-7xl items-start px-5 pt-7 pb-7 sm:min-h-[540px] sm:items-center sm:px-8 sm:py-12 lg:min-h-[580px] lg:px-10 lg:py-12"
+{/* CONTENT CONTAINER */}
+<div className="relative mx-auto flex min-h-[580px] max-w-7xl px-5 py-10   sm:px-8 sm:py-12 lg:min-h-[580px]  ">
+
+  {/* HERO CONTENT */}
+  <motion.div
+    initial={{ opacity: 0, x: -25 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.75 }}
+    className="relative z-10 flex w-full max-w-2xl flex-col justify-between self-stretch sm:ml-6 sm:self-auto sm:justify-start lg:ml-18"
   >
 
-    {/* HERO CONTENT */}
-    <motion.div
-      initial={{ opacity: 0, x: -25 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.75 }}
-      className="relative z-10 flex w-full max-w-2xl flex-col sm:ml-6 lg:ml-18"
-    >
+    {/* HEADING GROUP */}
+    <div className="mt-10 sm:mt-0">
 
-      {/* EYEBROW — HIDDEN ON MOBILE */}
+      {/* EYEBROW */}
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.15, duration: 0.6 }}
-        className="mb-5 hidden items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-[#9f4655] sm:flex sm:text-xs sm:tracking-[0.25em]"
+        className="mb-5 items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-[#9f4655] flex sm:text-xs sm:tracking-[0.25em]"
       >
         <span className="h-px w-8 bg-[#c85f68] sm:w-10" />
         Fresh Flowers
@@ -222,91 +223,52 @@ function Home() {
 
       {/* HEADING */}
       <h1 className="max-w-xl font-serif text-[clamp(2.7rem,8vw,5.8rem)] font-medium leading-[0.98] tracking-[-0.04em] text-[#344331]">
-        Flowers for
-
+        {/* Flowers for */}
+        For Moments 
         <motion.span
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.7 }}
           className="mt-1 block italic text-[#c85f68]"
         >
-          Every Feeling
+          {/* Every Feeling */}
+          That Matter
         </motion.span>
       </h1>
 
-      {/* DECORATIVE UNDERLINE */}
+      {/* UNDERLINE */}
       <motion.div
         initial={{ opacity: 0, scaleX: 0 }}
         animate={{ opacity: 1, scaleX: 1 }}
         transition={{ delay: 0.45, duration: 0.6 }}
         className="mt-4 h-1 w-20 origin-left -rotate-2 rounded-full bg-[#c85f68]"
       />
+    </div>
 
-      {/* DESCRIPTION — HIDDEN ON MOBILE */}
-      <motion.p
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4, duration: 0.7 }}
-        className="mt-5 hidden max-w-md text-sm leading-7 text-[#514d43] sm:mt-6 sm:block sm:text-base sm:leading-8"
+    {/* CTA — PUSHED TOWARD BOTTOM ON MOBILE */}
+    <motion.div
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.55, duration: 0.7 }}
+      className="mt-20 flex flex-wrap gap-3 pb-2 sm:mt-8 sm:pb-0 sm:gap-4"
+      
+    >
+      <Link
+        to="/products"
+        className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#9f1239] px-5 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#9f1239]/25 transition duration-300 hover:-translate-y-1 hover:bg-[#80102f] hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#9f1239] focus:ring-offset-2 sm:gap-3 sm:px-7"
       >
-        Thoughtfully designed bouquets, beautiful floral arrangements
-        and memorable decorations for life's most beautiful moments.
-      </motion.p>
-
-      {/* SPACER — PUSHES BUTTONS DOWN ON MOBILE */}
-      <div className="h-24 shrink-0 sm:hidden" />
-
-      {/* CTA BUTTONS */}
-      <motion.div
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.55, duration: 0.7 }}
-        className="mt-0 flex flex-wrap gap-3 sm:mt-8 sm:gap-4"
-      >
-        <Link
-          to="/products"
-          className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#9f1239] px-5 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#9f1239]/25 transition duration-300 hover:-translate-y-1 hover:bg-[#80102f] hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#9f1239] focus:ring-offset-2 sm:gap-3 sm:px-7"
-        >
-          Explore Flowers
-          <ArrowRight
-            size={18}
-            className="transition-transform duration-300 group-hover:translate-x-1"
-          />
-        </Link>
-
-        {/* <Link
-          to="/services"
-          className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#9f1239]/30 bg-white/80 px-5 py-3.5 text-sm font-semibold text-[#9f1239] shadow-sm backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:bg-white sm:px-7"
-        >
-          Our Services
-        </Link> */}
-      </motion.div>
-
-      {/* BENEFITS — HIDDEN ON MOBILE */}
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.7, duration: 0.7 }}
-        className="mt-8 hidden flex-wrap gap-x-5 gap-y-3 border-t border-[#9f1239]/15 pt-5 text-xs font-medium text-[#51413f] sm:mt-10 sm:flex sm:gap-x-7 sm:text-sm"
-      >
-        <span className="flex items-center gap-2">
-          <Flower2 size={17} className="shrink-0 text-[#9f1239]" />
-          Fresh Flowers
-        </span>
-
-        <span className="flex items-center gap-2">
-          <Truck size={17} className="shrink-0 text-[#9f1239]" />
-          Fast Delivery
-        </span>
-
-        <span className="flex items-center gap-2">
-          <Heart size={17} className="shrink-0 text-[#9f1239]" />
-          Made With Care
-        </span>
-      </motion.div>
-
+        Explore Flowers
+        <ArrowRight
+          size={18}
+          className="transition-transform duration-300 group-hover:translate-x-1"
+        />
+      </Link>
+      
     </motion.div>
 
+  </motion.div>
+
+  
     {/* FLOATING CAPTION — HIDDEN ON MOBILE */}
     <motion.div
       initial={{ opacity: 0, y: 15 }}
@@ -332,7 +294,8 @@ function Home() {
       </motion.div>
     </motion.div>
 
-  </div>
+</div>
+ 
 </section>
 
 

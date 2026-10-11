@@ -8,8 +8,8 @@ import {
   ChevronDown,
   Plus 
 } from "lucide-react";
-// import logo from "../assets/logo.png"
-import logo3 from "../assets/logo3.jpeg"
+import logo from "../assets/logo.jpeg"
+
 export default function Navbar() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
@@ -316,7 +316,7 @@ export default function Navbar() {
         className="flex items-center gap-1.5 sm:gap-2 cursor-pointer shrink-0"
       >
         <img
-          src={logo3}
+          src={logo}
           alt="Anil Flower House"
           className="h-14 sm:h-16 w-auto object-contain"
         />
