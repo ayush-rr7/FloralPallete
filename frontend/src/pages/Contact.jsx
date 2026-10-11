@@ -12,7 +12,6 @@ import {
 // Replace the dummy values with the actual details.
 // --------------------------------------------------
 
-
 const shopDetails = {
   name: "Anil Flower House and Car Decoration",
 
@@ -20,24 +19,22 @@ const shopDetails = {
   city: "Mohali",
   pincode: "140103.",
 
-  phone: "+91 98726 40636",
-  email: "contact@example.com",
+  phone1: "+91 98726 40636",
+  phone2: "+91 93562 15236",
+  email: "rk58780721@gmail.com",
   whatsapp: "+91 98726 40636",
-  hours: "9:00 AM - 9:00 PM",
+  hours: "6:30 AM - 9:00 PM",
 
-  mapsUrl:
-   "https://maps.app.goo.gl/1uPYQtdoz9rPY7XG7"
+  mapsUrl: "https://maps.app.goo.gl/1uPYQtdoz9rPY7XG7",
 };
-
 
 function Contact() {
   const whatsappMessage = encodeURIComponent(
-    "Hello, I would like to enquire about your flowers and services."
+    "Hello, I would like to enquire about your flowers and services.",
   );
 
   return (
     <div className="min-h-screen bg-gray-50">
-
       {/* Hero */}
       <section className="bg-pink-50 px-6 py-14 text-center">
         <p className="text-sm font-medium text-pink-600 uppercase tracking-wide">
@@ -49,42 +46,36 @@ function Contact() {
         </h1>
 
         <p className="mt-4 max-w-2xl mx-auto text-gray-600 leading-7">
-          Have a question about our flowers, bouquets, car decoration,
-          delivery, or custom arrangements? We'd love to hear from you.
+          Have a question about our flowers, bouquets, car decoration, delivery,
+          or custom arrangements? We'd love to hear from you.
         </p>
       </section>
 
       {/* Main Content */}
       <section className="max-w-7xl mx-auto px-6 py-12">
-
         <div className="grid lg:grid-cols-3 gap-8">
-
           {/* Shop Information */}
           <div className="lg:col-span-1 space-y-5">
-
             <div>
               <h2 className="text-2xl font-semibold text-gray-900">
                 Visit Our Store
               </h2>
 
               <p className="mt-2 text-gray-600 text-sm leading-6">
-                Visit us for fresh flowers, beautiful bouquets and
-                floral decoration services.
+                Visit us for fresh flowers, beautiful bouquets and floral
+                decoration services.
               </p>
             </div>
 
             {/* Address */}
             <div className="bg-white rounded-xl border border-gray-200 p-5">
               <div className="flex gap-4">
-
                 <div className="shrink-0 w-10 h-10 rounded-full bg-pink-50 flex items-center justify-center">
                   <MapPin className="w-5 h-5 text-pink-600" />
                 </div>
 
                 <div>
-                  <h3 className="font-semibold text-gray-900">
-                    Shop Address
-                  </h3>
+                  <h3 className="font-semibold text-gray-900">Shop Address</h3>
 
                   <p className="mt-1 text-sm text-gray-600 leading-6">
                     {shopDetails.name}
@@ -104,14 +95,12 @@ function Contact() {
                     Get Directions
                   </a>
                 </div>
-
               </div>
             </div>
 
             {/* Business Hours */}
             <div className="bg-white rounded-xl border border-gray-200 p-5">
               <div className="flex gap-4">
-
                 <div className="shrink-0 w-10 h-10 rounded-full bg-pink-50 flex items-center justify-center">
                   <Clock className="w-5 h-5 text-pink-600" />
                 </div>
@@ -121,27 +110,18 @@ function Contact() {
                     Business Hours
                   </h3>
 
-                  <p className="mt-1 text-sm text-gray-600">
-                    Monday - Sunday
-                  </p>
+                  <p className="mt-1 text-sm text-gray-600">Monday - Sunday</p>
 
-                  <p className="text-sm text-gray-600">
-                    {shopDetails.hours}
-                  </p>
+                  <p className="text-sm text-gray-600">{shopDetails.hours}</p>
                 </div>
-
               </div>
             </div>
-
           </div>
 
           {/* Contact Options */}
           <div className="lg:col-span-2">
-
             <div className="bg-white rounded-2xl border border-gray-200 p-6 md:p-8">
-
               <div className="flex items-center gap-3">
-
                 <div className="w-10 h-10 rounded-full bg-pink-50 flex items-center justify-center">
                   <MessageCircle className="w-5 h-5 text-pink-600" />
                 </div>
@@ -155,12 +135,10 @@ function Contact() {
                     Choose your preferred way to contact us.
                   </p>
                 </div>
-
               </div>
 
               {/* Contact Buttons */}
               <div className="grid sm:grid-cols-3 gap-4 mt-8">
-
                 {/* Call */}
                 <a
                   href={`tel:${shopDetails.phone}`}
@@ -170,9 +148,7 @@ function Contact() {
                     <Phone className="w-5 h-5 text-pink-600" />
                   </div>
 
-                  <span className="font-medium text-gray-900">
-                    Call Us
-                  </span>
+                  <span className="font-medium text-gray-900">Call Us</span>
 
                   <span className="text-xs text-gray-500">
                     {shopDetails.phone}
@@ -190,13 +166,9 @@ function Contact() {
                     <MessageCircle className="w-5 h-5 text-green-600" />
                   </div>
 
-                  <span className="font-medium text-gray-900">
-                    WhatsApp
-                  </span>
+                  <span className="font-medium text-gray-900">WhatsApp</span>
 
-                  <span className="text-xs text-gray-500">
-                    Chat with us
-                  </span>
+                  <span className="text-xs text-gray-500">Chat with us</span>
                 </a>
 
                 {/* Email */}
@@ -208,47 +180,41 @@ function Contact() {
                     <Mail className="w-5 h-5 text-blue-600" />
                   </div>
 
-                  <span className="font-medium text-gray-900">
-                    Email Us
-                  </span>
+                  <span className="font-medium text-gray-900">Email Us</span>
 
                   <span className="text-xs text-gray-500 break-all">
                     {shopDetails.email}
                   </span>
                 </a>
-
               </div>
 
               {/* Direct contact information */}
               <div className="mt-8 pt-6 border-t border-gray-200">
-
                 <h3 className="font-semibold text-gray-900">
                   Contact Information
                 </h3>
 
                 <div className="mt-4 space-y-3">
-
                   <div className="flex items-center gap-3 text-sm text-gray-600">
                     <Phone className="w-4 h-4 text-pink-600" />
-                    <span>{shopDetails.phone}</span>
+                    <span>{shopDetails.phone1}</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-sm text-gray-600">
+                    <Phone className="w-4 h-4 text-pink-600" />
+                    <span>{shopDetails.phone2}</span>
                   </div>
 
                   <div className="flex items-center gap-3 text-sm text-gray-600">
                     <Mail className="w-4 h-4 text-pink-600" />
                     <span>{shopDetails.email}</span>
                   </div>
-
                 </div>
-
               </div>
-
             </div>
 
             {/* Google Maps */}
             <div className="mt-8 overflow-hidden rounded-2xl border border-gray-200 bg-white">
-
               <div className="h-64 flex flex-col items-center justify-center text-center px-6">
-
                 <div className="w-14 h-14 rounded-full bg-pink-50 flex items-center justify-center">
                   <MapPin className="w-7 h-7 text-pink-600" />
                 </div>
@@ -270,16 +236,11 @@ function Contact() {
                   <Navigation className="w-4 h-4" />
                   Open in Google Maps
                 </a>
-
               </div>
-
             </div>
-
           </div>
         </div>
       </section>
-
-      
     </div>
   );
 }

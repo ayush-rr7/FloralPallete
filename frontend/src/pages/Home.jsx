@@ -10,6 +10,17 @@ import {
 } from "lucide-react";
 
 import hero from "../assets/hero.png";
+import roseImg from "../assets/roseImg.png";
+import celebImg from "../assets/celebImg.png";
+import weddingImg from "../assets/weddingImg.png";
+import roseBouquetImg from "../assets/roseBouquetImg.png";
+import Birthday from "../assets/Birthday.png";
+import jaimala from "../assets/jaimala.png";
+import car from "../assets/car.jpeg";
+import homedecor from "../assets/homedecor.jpg";
+import bottom  from "../assets/bottom.jpg";
+
+
 
 const petals = [
   { left: "7%", top: "18%", delay: 0, duration: 9 },
@@ -23,7 +34,7 @@ const occasions = [
   {
     title: "Romance",
     subtitle: "Say it with flowers",
-    image: hero,
+    image: roseBouquetImg,
     link: "/products?category=roses",
   },
   {
@@ -35,7 +46,7 @@ const occasions = [
   {
     title: "Birthdays",
     subtitle: "Add colour to their day",
-    image: hero,
+    image: Birthday,
     link: "/products?category=birthday",
   },
   {
@@ -51,19 +62,19 @@ const products = [
     name: "The Rose Affair",
     type: "Premium Bouquet",
     price: "₹799",
-    image: hero,
+    image: roseImg,
   },
   {
     name: "Blush Garden",
     type: "Mixed Flowers",
     price: "₹1,099",
-    image: hero,
+    image: celebImg,
   },
   {
     name: "Forever Bloom",
     type: "Luxury Arrangement",
     price: "₹1,499",
-    image: hero,
+    image: weddingImg,
   },
 ];
 
@@ -88,6 +99,61 @@ const services = [
   },
 ];
 
+
+const offerings = [
+  {
+    title: "Bouquets",
+    subtitle: "Flowers that say it beautifully",
+    image: roseBouquetImg,
+    link: "/products?category=bouquets",
+  },
+  {
+    title: "Garlands",
+    subtitle: "Traditional floral beauty",
+    image: celebImg,
+    link: "/products?category=garlands",
+  },
+  {
+    title: "Jaimala",
+    subtitle: "Made for your special day",
+    image: jaimala,
+    link: "/products?category=jaimala",
+  },
+  {
+    title: "Car Decoration",
+    subtitle: "A beautiful arrival",
+    image: car,
+    // link: "/services",
+    link: "/products",
+  },
+  {
+    title: "Home Decoration",
+    subtitle: "Bring your spaces to life",
+    image: homedecor,
+    link: "/products",
+  },
+  {
+    title: "Weddings & Events",
+    subtitle: "Celebrate in full bloom",
+    image: weddingImg,
+    // link: "/services",
+    link: "/products",
+    
+  },
+  // {
+  //   title: "Floral Arrangements",
+  //   subtitle: "Thoughtfully arranged blooms",
+  //   image: roseImg,
+  //   link: "/products",
+  // },
+  // {
+  //   title: "Loose Flowers",
+  //   subtitle: "Fresh blooms for every need",
+  //   image: celebImg,
+  //   link: "/products",
+  // },
+];
+
 function Reveal({ children, delay = 0, className = "" }) {
   return (
     <motion.div
@@ -110,161 +176,279 @@ function Home() {
   return (
     <main className="overflow-hidden bg-[#fffbf7] text-stone-800">
 
-      {/* ================= HERO ================= */}
-      <section className="relative min-h-[760px] overflow-hidden bg-[#f9e8ed]">
+     
+{/* ================= HERO ================= */}
+ <section className="relative isolate overflow-hidden bg-[#fff8f3]">
 
-        {/* soft background shapes */}
-        <div className="absolute -left-40 -top-40 h-[500px] w-[500px] rounded-full bg-[#f4cbd7]/50 blur-3xl" />
-        <div className="absolute -bottom-40 right-[-100px] h-[500px] w-[500px] rounded-full bg-[#dce6d6]/50 blur-3xl" />
+  {/* FULL BACKGROUND IMAGE */}
+  <div className="absolute inset-0 -z-30">
+    <img
+      src={hero}
+      alt=""
+      aria-hidden="true"
+      fetchPriority="high"
+      className="h-full w-full object-cover object-[70%_center] sm:object-center"
+    />
+  </div>
 
-        {/* floating flowers */}
-        {petals.map((petal, index) => (
-          <motion.div
-            key={index}
-            className="pointer-events-none absolute text-2xl opacity-30 md:text-4xl"
-            style={{
-              left: petal.left,
-              top: petal.top,
-            }}
-            animate={{
-              y: [0, -25, 10, 0],
-              x: [0, 12, -8, 0],
-              rotate: [0, 15, -10, 0],
-            }}
-            transition={{
-              duration: petal.duration,
-              delay: petal.delay,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
+  {/* SOFT AMBIENT COLOR */}
+  <div className="pointer-events-none absolute -left-32 top-0 -z-10 h-80 w-80 rounded-full bg-[#f4cbd7]/25 blur-3xl" />
+
+  {/* CONTENT CONTAINER */}
+  <div
+    className="relative mx-auto flex min-h-[600px] max-w-7xl items-start px-5 pt-7 pb-7 sm:min-h-[540px] sm:items-center sm:px-8 sm:py-12 lg:min-h-[580px] lg:px-10 lg:py-12"
+  >
+
+    {/* HERO CONTENT */}
+    <motion.div
+      initial={{ opacity: 0, x: -25 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.75 }}
+      className="relative z-10 flex w-full max-w-2xl flex-col sm:ml-6 lg:ml-18"
+    >
+
+      {/* EYEBROW — HIDDEN ON MOBILE */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.15, duration: 0.6 }}
+        className="mb-5 hidden items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-[#9f4655] sm:flex sm:text-xs sm:tracking-[0.25em]"
+      >
+        <span className="h-px w-8 bg-[#c85f68] sm:w-10" />
+        Fresh Flowers
+        <span className="text-[#c85f68]">•</span>
+        Special Moments
+      </motion.div>
+
+      {/* HEADING */}
+      <h1 className="max-w-xl font-serif text-[clamp(2.7rem,8vw,5.8rem)] font-medium leading-[0.98] tracking-[-0.04em] text-[#344331]">
+        Flowers for
+
+        <motion.span
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.7 }}
+          className="mt-1 block italic text-[#c85f68]"
+        >
+          Every Feeling
+        </motion.span>
+      </h1>
+
+      {/* DECORATIVE UNDERLINE */}
+      <motion.div
+        initial={{ opacity: 0, scaleX: 0 }}
+        animate={{ opacity: 1, scaleX: 1 }}
+        transition={{ delay: 0.45, duration: 0.6 }}
+        className="mt-4 h-1 w-20 origin-left -rotate-2 rounded-full bg-[#c85f68]"
+      />
+
+      {/* DESCRIPTION — HIDDEN ON MOBILE */}
+      <motion.p
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4, duration: 0.7 }}
+        className="mt-5 hidden max-w-md text-sm leading-7 text-[#514d43] sm:mt-6 sm:block sm:text-base sm:leading-8"
+      >
+        Thoughtfully designed bouquets, beautiful floral arrangements
+        and memorable decorations for life's most beautiful moments.
+      </motion.p>
+
+      {/* SPACER — PUSHES BUTTONS DOWN ON MOBILE */}
+      <div className="h-24 shrink-0 sm:hidden" />
+
+      {/* CTA BUTTONS */}
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.55, duration: 0.7 }}
+        className="mt-0 flex flex-wrap gap-3 sm:mt-8 sm:gap-4"
+      >
+        <Link
+          to="/products"
+          className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#9f1239] px-5 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#9f1239]/25 transition duration-300 hover:-translate-y-1 hover:bg-[#80102f] hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#9f1239] focus:ring-offset-2 sm:gap-3 sm:px-7"
+        >
+          Explore Flowers
+          <ArrowRight
+            size={18}
+            className="transition-transform duration-300 group-hover:translate-x-1"
+          />
+        </Link>
+
+        {/* <Link
+          to="/services"
+          className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#9f1239]/30 bg-white/80 px-5 py-3.5 text-sm font-semibold text-[#9f1239] shadow-sm backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:bg-white sm:px-7"
+        >
+          Our Services
+        </Link> */}
+      </motion.div>
+
+      {/* BENEFITS — HIDDEN ON MOBILE */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.7, duration: 0.7 }}
+        className="mt-8 hidden flex-wrap gap-x-5 gap-y-3 border-t border-[#9f1239]/15 pt-5 text-xs font-medium text-[#51413f] sm:mt-10 sm:flex sm:gap-x-7 sm:text-sm"
+      >
+        <span className="flex items-center gap-2">
+          <Flower2 size={17} className="shrink-0 text-[#9f1239]" />
+          Fresh Flowers
+        </span>
+
+        <span className="flex items-center gap-2">
+          <Truck size={17} className="shrink-0 text-[#9f1239]" />
+          Fast Delivery
+        </span>
+
+        <span className="flex items-center gap-2">
+          <Heart size={17} className="shrink-0 text-[#9f1239]" />
+          Made With Care
+        </span>
+      </motion.div>
+
+    </motion.div>
+
+    {/* FLOATING CAPTION — HIDDEN ON MOBILE */}
+    <motion.div
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.8, duration: 0.7 }}
+      className="absolute bottom-5 right-5 z-10 hidden rounded-2xl border border-white/70 bg-white/85 px-5 py-4 shadow-xl backdrop-blur-md md:block lg:bottom-8 lg:right-10"
+    >
+      <motion.div
+        animate={{ y: [0, -5, 0] }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      >
+        <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#806c68]">
+          Crafted with care
+        </p>
+
+        <p className="mt-1 font-serif text-base text-[#292524] sm:text-lg">
+          Every bouquet tells a story.
+        </p>
+      </motion.div>
+    </motion.div>
+
+  </div>
+</section>
+
+
+
+{/* ================= OUR OFFERINGS ================= */}
+<section
+  id="offerings"
+  className="relative z-0 bg-[#fffbf7] px-5 py-16 sm:px-8 sm:py-20"
+>
+  <div className="mx-auto max-w-7xl">
+
+    {/* Section heading */}
+    <div className="mb-10 sm:mb-12">
+      <motion.p
+        initial={{ opacity: 0, y: 12 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.5 }}
+        className="text-xs font-semibold uppercase tracking-[0.22em] text-[#9f1239] sm:text-sm"
+      >
+        Discover BloomShop
+      </motion.p>
+
+      <div className="mt-3 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+        <div>
+          <motion.h2
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6 }}
+            className="max-w-3xl font-serif text-3xl leading-tight text-stone-800 sm:text-4xl md:text-5xl"
           >
-            ✿
-          </motion.div>
-        ))}
+            From Bouquets to Beautiful Spaces
+          </motion.h2>
 
-        <div className="relative mx-auto grid min-h-[760px] max-w-7xl items-center gap-14 px-6 py-20 lg:grid-cols-[0.9fr_1.1fr] lg:px-10">
+          <p className="mt-3 max-w-2xl text-sm leading-6 text-stone-500 sm:text-base sm:leading-7">
+            From fresh bouquets to thoughtful decorations, discover
+            beautiful flowers and floral services for every occasion.
+          </p>
+        </div>
 
-          {/* LEFT */}
-          <motion.div
-            initial={{ opacity: 0, x: -45 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="relative z-10"
+        <Link
+          to="/products"
+          className="group inline-flex w-fit shrink-0 items-center gap-2 text-sm font-semibold text-[#9f1239] transition-colors hover:text-[#7f102e]"
+        >
+          Explore Collection
+          <ArrowRight
+            size={17}
+            className="transition-transform duration-300 group-hover:translate-x-1"
+          />
+        </Link>
+      </div>
+    </div>
+
+    {/* Six offering cards */}
+    <div className="grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-3 lg:gap-6">
+      {offerings.map((item, index) => (
+        <motion.div
+          key={item.title}
+          initial={{ opacity: 0, y: 22 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.12 }}
+          transition={{
+            duration: 0.45,
+            delay: (index % 3) * 0.08,
+            ease: "easeOut",
+          }}
+          className="min-w-0"
+        >
+          <Link
+            to={item.link}
+            aria-label={`Explore ${item.title}`}
+            className="group flex h-full flex-col overflow-hidden rounded-2xl border border-stone-200/70 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#e8c4cc] hover:shadow-lg sm:rounded-3xl"
           >
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="mb-6 flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#9f1239]"
-            >
-              <span className="h-px w-10 bg-[#9f1239]" />
-              Floral Studio
-            </motion.div>
-
-            <h1 className="max-w-2xl font-serif text-6xl font-medium leading-[0.95] tracking-tight text-[#292524] sm:text-7xl lg:text-[88px]">
-              Flowers
-              <br />
-              <span className="italic text-[#9f1239]">
-                that speak
-              </span>
-              <br />
-              for you.
-            </h1>
-
-            <p className="mt-8 max-w-lg text-lg leading-8 text-stone-600">
-              Thoughtfully designed bouquets, beautiful floral arrangements
-              and memorable decorations for life's most beautiful moments.
-            </p>
-
-            <div className="mt-9 flex flex-wrap gap-4">
-
-              <Link
-                to="/products"
-                className="group flex items-center gap-3 rounded-full bg-[#9f1239] px-7 py-4 font-medium text-white shadow-lg shadow-[#9f1239]/20 transition duration-300 hover:-translate-y-1 hover:bg-[#881337]"
-              >
-                Explore Flowers
-                <ArrowRight
-                  size={18}
-                  className="transition-transform duration-300 group-hover:translate-x-1"
-                />
-              </Link>
-
-              <Link
-                to="/services"
-                className="flex items-center gap-2 rounded-full border border-[#9f1239]/25 bg-white/50 px-7 py-4 font-medium text-[#9f1239] backdrop-blur transition duration-300 hover:-translate-y-1 hover:bg-white"
-              >
-                Our Services
-              </Link>
-
-            </div>
-
-            <div className="mt-10 flex flex-wrap gap-7 text-sm text-stone-600">
-              <span className="flex items-center gap-2">
-                <Flower2 size={17} />
-                Fresh Flowers
-              </span>
-
-              <span className="flex items-center gap-2">
-                <Truck size={17} />
-                Fast Delivery
-              </span>
-
-              <span className="flex items-center gap-2">
-                <Heart size={17} />
-                Made With Care
-              </span>
-            </div>
-          </motion.div>
-
-          {/* RIGHT IMAGE */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.94, x: 35 }}
-            animate={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{ duration: 0.9, delay: 0.15 }}
-            className="relative"
-          >
-            <div className="absolute -inset-6 rounded-[3rem] bg-white/30 blur-2xl" />
-
-            <motion.div
-              whileHover={{ scale: 1.015 }}
-              transition={{ duration: 0.4 }}
-              className="relative overflow-hidden rounded-[3rem] shadow-2xl"
-            >
+            {/* Image */}
+            <div className="relative aspect-[5/4] overflow-hidden bg-[#f3ede7]">
               <img
-                src={hero}
-                alt="Beautiful floral arrangement"
-                className="h-[560px] w-full object-cover lg:h-[650px]"
+                src={item.image}
+                alt={item.title}
+                loading="lazy"
+                className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-            </motion.div>
+              {/* Subtle image shading */}
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-60" />
+            </div>
 
-            {/* floating card */}
-            <motion.div
-              animate={{ y: [0, -7, 0] }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="absolute bottom-7 left-5 rounded-2xl border border-white/50 bg-white/90 px-5 py-4 shadow-xl backdrop-blur-md md:-left-7"
-            >
-              <p className="text-xs uppercase tracking-wider text-stone-500">
-                Crafted with care
-              </p>
+            {/* Card details */}
+            <div className="flex flex-1 items-center justify-between gap-2 p-3 sm:p-5">
+              <div className="min-w-0">
+                <h3 className="font-serif text-base font-medium leading-snug text-stone-800 transition-colors group-hover:text-[#9f1239] sm:text-xl">
+                  {item.title}
+                </h3>
 
-              <p className="mt-1 font-serif text-lg text-stone-800">
-                Every bouquet tells a story.
-              </p>
-            </motion.div>
-          </motion.div>
+                <p className="mt-1.5 line-clamp-2 text-xs leading-5 text-stone-500 sm:text-sm">
+                  {item.subtitle}
+                </p>
+              </div>
 
-        </div>
-      </section>
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#fbf0f2] text-[#9f1239] transition-all duration-300 group-hover:bg-[#9f1239] group-hover:text-white sm:h-9 sm:w-9">
+                <ArrowRight
+                  size={16}
+                  className="transition-transform duration-300 group-hover:translate-x-0.5"
+                />
+              </span>
+            </div>
+          </Link>
+        </motion.div>
+      ))}
+    </div>
 
+  </div>
+</section>
 
       {/* ================= INTRO ================= */}
-      <section className="px-6 py-24 md:py-32">
+      {/* <section className="px-6 py-24 md:py-32">
         <Reveal>
           <div className="mx-auto max-w-4xl text-center">
 
@@ -293,10 +477,11 @@ function Home() {
 
           </div>
         </Reveal>
-      </section>
+      </section> */}
 
 
-      {/* ================= OCCASIONS ================= */}
+
+      {/* ================= OCCASIONS =================
       <section className="bg-[#f4f1eb] px-6 py-24 md:py-28">
 
         <Reveal>
@@ -376,7 +561,7 @@ function Home() {
           ))}
 
         </div>
-      </section>
+      </section> */}
 
 
       {/* ================= FEATURED COLLECTION ================= */}
@@ -502,7 +687,8 @@ function Home() {
                 </p>
 
                 <Link
-                  to="/services"
+                  // to="/services"
+                  to="/products"
                   className="mt-8 inline-flex items-center gap-3 rounded-full bg-white px-7 py-3.5 font-medium text-[#7b2438] transition duration-300 hover:-translate-y-1"
                 >
                   Explore our services
@@ -515,7 +701,7 @@ function Home() {
               <div className="relative h-[430px] md:h-[620px]">
 
                 <img
-                  src={hero}
+                  src={bottom}
                   alt="Floral event arrangement"
                   className="h-full w-full object-cover"
                 />
@@ -579,7 +765,8 @@ function Home() {
                   </p>
 
                   <Link
-                    to="/services"
+                    // to="/services"
+                    to="/products"
                     className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#9f1239]"
                   >
                     Learn more

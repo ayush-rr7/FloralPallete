@@ -102,7 +102,10 @@ function Footer() {
           Anil Flower House, Near Civil Hospital, Ropar Road, Kurali, Dist. Mohali
         </p>
           <p className="text-sm mt-3">
-            📞 +91 98765 43210
+            📞 +91 98726 40636
+          </p>
+          <p className="text-sm mt-3">
+            📞 +91 93562 15236
           </p>
 
           <p className="text-sm mt-1 break-all">

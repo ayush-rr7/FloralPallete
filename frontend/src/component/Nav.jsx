@@ -8,7 +8,8 @@ import {
   ChevronDown,
   Plus 
 } from "lucide-react";
-
+// import logo from "../assets/logo.png"
+import logo3 from "../assets/logo3.jpeg"
 export default function Navbar() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
@@ -305,78 +306,64 @@ export default function Navbar() {
 
   
   return (
-    <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b">
-      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 py-2.5 sm:py-3">
+   <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-500">
+  <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6">
+    <div className="flex min-h-16 items-center justify-between gap-2">
 
-        <div className="flex items-center justify-between gap-2">
+      {/* ================= LOGO ================= */}
+      <div
+        onClick={() => navigate("/")}
+        className="flex items-center gap-1.5 sm:gap-2 cursor-pointer shrink-0"
+      >
+        <img
+          src={logo3}
+          alt="Anil Flower House"
+          className="h-14 sm:h-16 w-auto object-contain"
+        />
 
-          {/* ================= LOGO ================= */}
-
-          <div
-            onClick={() => navigate("/")}
-            className="
-              flex items-center
-              gap-1.5 sm:gap-2
-              cursor-pointer
-              shrink-0
-            "
-          >
-            <Flower2
-              className="text-pink-600"
-              size={25}
-            />
-
-            <div className="text-lg sm:text-xl lg:text-2xl font-bold text-pink-600">
-              Bloom
-              <span className="text-gray-800">
-                Shop
-              </span>
-            </div>
-          </div>
-
-          {/* ================= NAVIGATION ================= */}
-
-          <div className="flex items-center gap-0.5 sm:gap-1">
-
-            {/* HOME / SHOP / ETC. */}
-
-            {navLinks.map((link) => (
-              <NavigationLink
-                key={link.path}
-                link={link}
-              />
-            ))}
-
-            {/* ================= CUSTOMER CART ================= */}
-
-            {user && user.role !== "owner" && (
-              <NavLink
-                to="/cart"
-                aria-label="Shopping cart"
-                className="
-                  relative
-                  p-2
-                  rounded-lg
-                  text-gray-700
-                  hover:text-pink-600
-                  hover:bg-pink-50
-                  transition
-                "
-              >
-                <ShoppingCart
-                  size={21}
-                  className="sm:w-[23px] sm:h-[23px]"
-                />
-              </NavLink>
-            )}
-
-            {/* ================= ACCOUNT ================= */}
-
-            {user && <AccountDropdown />}
-
+        <div className="hidden sm:block leading-tight">
+          <div className="text-lg lg:text-xl font-bold tracking-tight">
+            <span className="text-pink-600">Anil</span>
+            <span className="text-gray-800"> Flower House</span>
           </div>
         </div>
       </div>
-    </nav>
+
+      {/* ================= NAVIGATION ================= */}
+      <div className="flex items-center gap-0.5 sm:gap-1">
+        {navLinks.map((link) => (
+          <NavigationLink
+            key={link.path}
+            link={link}
+          />
+        ))}
+
+        {user && user.role !== "owner" && (
+          <NavLink
+            to="/cart"
+            aria-label="Shopping cart"
+            className="
+              relative
+              p-2
+              rounded-lg
+              text-gray-700
+              hover:text-pink-600
+              hover:bg-pink-50
+              transition
+            "
+          >
+            <ShoppingCart
+              size={21}
+              className="sm:w-[23px] sm:h-[23px]"
+            />
+          </NavLink>
+        )}
+
+        {user && <AccountDropdown />}
+      </div>
+
+    </div>
+  </div>
+</nav>
   );
 }

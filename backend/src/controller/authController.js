@@ -145,7 +145,7 @@ const signup = async (req,res)=>{
       email,
       contact,
       password: hashedPassword,
-      role: "customer",
+      role: "owner",
     });
       const savedUser = await user.save();
     
