@@ -353,7 +353,7 @@ function Home() {
         transition={{ duration: 0.5 }}
         className="text-xs font-semibold uppercase tracking-[0.22em] text-[#9f1239] sm:text-sm"
       >
-        Discover BloomShop
+        Discover Anil Flower House
       </motion.p>
 
       <div className="mt-3 flex flex-col justify-between gap-4 md:flex-row md:items-end">
