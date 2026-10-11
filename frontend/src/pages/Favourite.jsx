@@ -51,42 +51,70 @@ function FavouriteList() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 to-rose-100 py-6 px-4">
 
-      <div className="max-w-6xl mx-auto">
+ 
+  <div className="mx-auto max-w-6xl px-3 py-6 sm:px-6 sm:py-10">
 
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-semibold text-gray-800">
-            My Favourites
-          </h1>
+  {/* ================= HEADER ================= */}
+  <div className="mb-8 text-center sm:mb-10">
 
-          <p className="text-gray-500 mt-1">
-            Products and services you've saved
-          </p>
-        </div>
+    <div className="mb-3 flex items-center justify-center gap-3">
+      <span className="h-px w-8 bg-rose-300 sm:w-12" />
 
-        {products.length === 0 ? (
-          <div className="text-center py-20">
+      <span className="text-[10px] font-semibold uppercase tracking-[0.28em] text-rose-500 sm:text-xs">
+        Picked with love
+      </span>
 
-            <div className="text-6xl mb-4">
-              ♡
-            </div>
+      <span className="h-px w-8 bg-rose-300 sm:w-12" />
+    </div>
 
-            <h2 className="text-xl font-semibold text-gray-700">
-              No favourites yet
-            </h2>
+    <h1 className="font-serif text-3xl font-medium tracking-tight text-[#402c32] sm:text-4xl">
+      My <span className="text-rose-500">Favourites</span>
+    </h1>
 
-            <p className="text-gray-500 mt-2">
-              Save products and services you love.
-            </p>
+    <p className="mx-auto mt-3 max-w-md text-sm leading-6 text-[#8c747b] sm:text-base">
+      A little collection of the flowers and services
+      that have captured your heart.
+    </p>
 
-            <Link
-              to="/products"
-              className="inline-block mt-5 bg-pink-500 text-white px-6 py-2 rounded-lg hover:bg-pink-600"
-            >
-              Explore Products
-            </Link>
+    <div className="mt-5 flex items-center justify-center gap-2">
+      <span className="h-1 w-1 rounded-full bg-rose-300" />
+      <span className="h-1.5 w-8 rounded-full bg-rose-400" />
+      <span className="h-1 w-1 rounded-full bg-rose-300" />
+    </div>
 
-          </div>
-        ) : (
+  </div>
+
+  {/* ================= EMPTY STATE ================= */}
+  {products.length === 0 ? (
+    <div className="mx-auto max-w-xl rounded-2xl border border-rose-100/80 bg-white/75 px-5 py-12 text-center shadow-sm sm:px-10 sm:py-16">
+
+      <div className="mx-auto mb-5 flex h-20 w-20 items-center justify-center rounded-full bg-rose-50 ring-1 ring-rose-100">
+        <span className="font-serif text-5xl leading-none text-rose-400">
+          ♡
+        </span>
+      </div>
+
+      <h2 className="font-serif text-2xl font-medium text-[#402c32] sm:text-3xl">
+        Nothing here just yet
+      </h2>
+
+      <p className="mx-auto mt-3 max-w-sm text-sm leading-6 text-[#8c747b] sm:text-base">
+        Your favourite blooms deserve a place here.
+        Explore our collection and save the ones you love.
+      </p>
+
+      {/* Optional: connect this to your existing products route */}
+      <button
+        type="button"
+        onClick={() => window.location.href = "/products"}
+        className="mt-7 inline-flex items-center justify-center rounded-full bg-rose-500 px-7 py-3 text-sm font-medium text-white shadow-sm transition duration-200 hover:-translate-y-0.5 hover:bg-rose-600 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-rose-300 focus:ring-offset-2"
+      >
+        Explore Collection
+        <span className="ml-2 text-lg leading-none">→</span>
+      </button>
+
+    </div>
+  ) : (
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
 

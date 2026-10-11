@@ -210,19 +210,49 @@ function ProductList() {
   // =========================================================
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 to-rose-100 py-4 sm:py-6 px-3 sm:px-4">
-      {/* ================= HEADER ================= */}
+   
 
-      <div className="text-center mb-5 sm:mb-6">
-        <h1 className="text-2xl sm:text-3xl font-semibold text-gray-800">
-          Our Products & Services
-        </h1>
+<div className="min-h-screen bg-gradient-to-b from-[#fff9f8] via-[#fff5f5] to-[#fcebed] px-3 py-6 sm:px-6 sm:py-10">
 
-        <p className="text-gray-500 mt-1 text-sm sm:text-base">
-          Flowers, bouquets, decorations and more
-        </p>
-      </div>
+  {/* ================= HEADER ================= */}
+  <div className="relative mx-auto mb-8 max-w-4xl text-center sm:mb-10">
 
+    {/* Decorative accent */}
+    <div className="mb-3 flex items-center justify-center gap-3">
+      <span className="h-px w-8 bg-rose-300 sm:w-12" />
+
+      <span className="text-[10px] font-semibold uppercase tracking-[0.28em] text-rose-500 sm:text-xs">
+        Made with love
+      </span>
+
+      <span className="h-px w-8 bg-rose-300 sm:w-12" />
+    </div>
+
+    {/* Main heading */}
+    <h1 className="font-serif text-3xl font-medium leading-tight tracking-tight text-[#402c32] sm:text-4xl md:text-5xl">
+      Our Products
+      <span className="mx-2 hidden text-rose-300 sm:inline"> & </span>
+      <span className="block text-rose-500 sm:mt-1 sm:inline">
+        Services
+      </span>
+    </h1>
+
+    {/* Subtitle */}
+    <p className="mx-auto mt-3 max-w-md text-sm leading-6 text-[#8c747b] sm:mt-4 sm:text-base">
+      Beautiful blooms, thoughtful bouquets, and floral
+      decorations for every special moment.
+    </p>
+
+    {/* Bottom decorative element */}
+    <div className="mt-5 flex items-center justify-center gap-2">
+      <span className="h-1 w-1 rounded-full bg-rose-300" />
+      <span className="h-1.5 w-8 rounded-full bg-rose-400" />
+      <span className="h-1 w-1 rounded-full bg-rose-300" />
+    </div>
+
+  </div>
+
+ 
       <div className="max-w-6xl mx-auto">
         {/* ================= INITIAL LOADING ================= */}
 
