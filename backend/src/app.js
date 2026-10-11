@@ -31,7 +31,7 @@ mongoose.connect(process.env.MONGODB_URI, {
   
   console.log("here");
 app.use(cors({
-  origin: ["http://localhost:5173","https://bloomshops.vercel.app" ],
+  origin: ["http://localhost:5173","https://anilflowers.vercel.app/" ],
   credentials: true
 }));
 // app.options("*", cors()); 
